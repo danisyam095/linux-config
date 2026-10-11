@@ -1,0 +1,243 @@
+# ============================================================
+# STARSHIP - TOKYO NIGHT / ICON HEAVY
+# ============================================================
+
+add_newline = true
+
+palette = "tokyo_night"
+
+format = """
+$os$username$hostname$directory$git_branch$git_status$cmd_duration
+$character
+"""
+
+right_format = """
+$jobs$nodejs$python$rust$golang$package
+"""
+
+# ============================================================
+# OS
+# ============================================================
+
+[os]
+disabled = false
+style = "bold blue"
+format = "[$symbol]($style) "
+
+[os.symbols]
+Arch = "󰣇"
+Linux = "󰌽"
+Ubuntu = "󰕈"
+Debian = "󰣚"
+Fedora = "󰣛"
+Windows = "󰍲"
+Macos = "󰀵"
+
+
+# ============================================================
+# USER
+# ============================================================
+
+[username]
+show_always = true
+style_user = "bold cyan"
+style_root = "bold red"
+format = "[$user]($style) "
+
+# ============================================================
+# HOST
+# ============================================================
+
+[hostname]
+ssh_only = false
+format = "[@$hostname ](bold purple)"
+
+# ============================================================
+# DIRECTORY
+# ============================================================
+
+[directory]
+style = "bold blue"
+format = "[󰉋 $path]($style) "
+truncation_length = 4
+truncate_to_repo = true
+home_symbol = "~"
+read_only = " "
+
+
+# ============================================================
+# GIT
+# ============================================================
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "[$all_status$ahead_behind]($style) "
+
+conflicted = "󰞇 "
+ahead = "󰁝${count} "
+behind = "󰁅${count} "
+diverged = "󰹹 "
+untracked = "󰋗${count} "
+modified = "󰏫${count} "
+staged = "󰐕${count} "
+renamed = "󰑕${count} "
+deleted = "󰆴${count} "
+
+
+# ============================================================
+# COMMAND DURATION
+# ============================================================
+
+[cmd_duration]
+min_time = 1000
+style = "bold yellow"
+format = "[󱎫 $duration]($style) "
+
+
+# ============================================================
+# JOBS
+# ============================================================
+
+[jobs]
+symbol = "󰜎 "
+style = "bold cyan"
+format = "[$symbol$number]($style) "
+
+
+# ============================================================
+# NODE
+# ============================================================
+
+[nodejs]
+symbol = "󰎙 "
+style = "bold green"
+format = "[$symbol$version]($style) "
+detect_files = [
+    "package.json",
+    ".node-version"
+]
+detect_folders = [
+    "node_modules"
+]
+
+
+# ============================================================
+# PYTHON
+# ============================================================
+
+[python]
+symbol = "󰌠 "
+style = "bold yellow"
+format = "[$symbol$version]($style) "
+pyenv_version_name = true
+
+
+# ============================================================
+# RUST
+# ============================================================
+
+[rust]
+symbol = "󱘗 "
+style = "bold red"
+format = "[$symbol$version]($style) "
+
+
+# ============================================================
+# GO
+# ============================================================
+
+[golang]
+symbol = "󰟓 "
+style = "bold cyan"
+format = "[$symbol$version]($style) "
+
+
+# ============================================================
+# PACKAGE
+# ============================================================
+
+[package]
+symbol = "󰏗 "
+style = "bold yellow"
+format = "[$symbol$version]($style) "
+
+
+# ============================================================
+# CHARACTER
+# ============================================================
+
+[character]
+success_symbol = "[󰜴](bold cyan)"
+error_symbol = "[󰜴](bold red)"
+vimcmd_symbol = "[󰜴](bold purple)"
+
+
+# ============================================================
+# STATUS
+# ============================================================
+
+[status]
+disabled = false
+symbol = "󰅙 "
+style = "bold red"
+format = "[$symbol$status]($style) "
+
+
+# ============================================================
+# MEMORY
+# ============================================================
+
+[memory_usage]
+disabled = false
+symbol = "󰍛 "
+style = "bold magenta"
+format = "[$symbol$percentage]($style) "
+
+
+# ============================================================
+# TIME
+# ============================================================
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "bold blue"
+format = "[󰥔 $time]($style) "
+
+
+# ============================================================
+# SHELL
+# ============================================================
+
+[shell]
+disabled = false
+bash_indicator = "󱆃 "
+zsh_indicator = " "
+fish_indicator = "󰈺 "
+powershell_indicator = "󰨊 "
+unknown_indicator = " "
+style = "bold cyan"
+format = "[$indicator]($style)"
+
+
+# ============================================================
+# TOKYO NIGHT
+# ============================================================
+
+[palettes.tokyo_night]
+
+black = "#15161e"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+purple = "#bb9af7"
+cyan = "#7dcfff"
+white = "#c0caf5"
+
+muted = "#565f89"
